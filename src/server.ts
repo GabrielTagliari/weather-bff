@@ -1,5 +1,7 @@
 import App from './app';
 
+require('dotenv').config()
+
 const PORT = process.env.SERVER_PORT || 8000;
 
 App.app.get('/', (req, res) => res.send('Express + TypeScript Server is cool!'));
