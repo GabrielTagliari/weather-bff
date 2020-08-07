@@ -1,14 +1,9 @@
 import { Response } from 'express';
 import WeatherAction from '../actions/WeatherAction';
 
-class WeatherController {
-  private weatherAction = new WeatherAction();
-
+class WeatherController {  
   getWeather(req: any, res: Response) {
-    console.log('Entrei no controller')
-    console.log(WeatherAction)
-    this.weatherAction
-      .getWeather()
+    new WeatherAction().getWeather()
       .then(response => {
         res.status(200).json({ response });
       })
